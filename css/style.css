@@ -1,0 +1,498 @@
+body {
+  color: white;
+  background-color: #9799a1;
+  font-family: 'Roboto Condensed', helvetica, arial;
+}
+#cSlider, #sSlider {
+  margin: 20px;
+}
+input {
+  width: 100%;
+}
+
+.progress-container {
+  margin-top: 100px;
+  width: 500px;
+}
+.loading-bar {
+  height: 30px;
+  background: #ea8435;
+}
+
+#spacer {
+  height: 100px;
+}
+#char-time, #innerSpiral, #spiral, #cline, #gline {
+  opacity: 0;
+}
+.character.rect {
+  fill: #6baed6;
+}
+.character.rect.appearance {
+  fill: #f0cb26;
+}
+.character.rect.selected {
+  fill: #cc4c02;
+}
+.character.text {
+  fill: white;
+}
+.issue.circle {
+  stroke: #333;
+  stroke-width: 2px;
+  fill: #333;
+}
+.issue.circle.appearance {
+  fill: #fe9929;
+  stroke: #fe9929;
+  stroke-width: 3px;
+}
+.issue.circle.first {
+  stroke: red;
+  stroke-width: 4px;
+}
+.issue.label {
+  fill: white;
+}
+.story.circle.appearance {
+  fill:#cc4c02;
+}
+.guide.point {
+  fill: #f0cb26;
+}
+.story.circle.selected {
+  stroke: #f0cb26;
+  stroke-width: 10px;
+  fill: #f0cb26;
+}
+.list-inline > li {
+  padding-left: 0px;
+}
+.issue-text {
+  pointer-events: none;
+}
+#timeline {
+  stroke: white;
+  opacity: .3;
+  stroke-width: 5px;
+}
+text {
+  fill: white;
+  font-size: 13px;
+}
+#characterName, #alsoText {
+  fill: white;
+  font-size: 20px;
+}
+.other {
+  opacity: .8;
+  fill: #998877;
+}
+.d194 {
+  fill: #c6dbef;
+}
+.d195 {
+  fill: #9ecae1;
+}
+.d196 {
+  fill: #6baed6;
+}
+.d197 {
+  fill: #4292c6;
+}
+.d198 {
+  fill: #2171b5;
+}
+.d199 {
+  fill: #08519c;
+}
+.d200 {
+  fill: #08306b;
+}
+.d201 {
+  fill: #08306b;
+}
+
+/* control positioning */
+.leaflet-control {
+  position: relative;
+  z-index: 7;
+  pointer-events: auto;
+}
+.leaflet-top, .leaflet-bottom {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+}
+.leaflet-top {
+  top: 0;
+}
+.leaflet-right {
+  right: 0;
+}
+.leaflet-bottom {
+  bottom: 0;
+}
+.leaflet-left {
+  left: 0;
+}
+.leaflet-control {
+  float: left;
+  clear: both;
+}
+.leaflet-right .leaflet-control {
+  float: right;
+}
+.leaflet-top .leaflet-control {
+  margin-top: 10px;
+}
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 10px;
+}
+.leaflet-left .leaflet-control {
+  margin-left: 10px;
+}
+.leaflet-right .leaflet-control {
+  margin-right: 10px;
+}
+
+/* zoom control */
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  font: bold 18px 'Lucida Console', Monaco, monospace;
+  text-indent: 1px;
+}
+.leaflet-control-zoom-out {
+  font-size: 20px;
+}
+
+.leaflet-touch .leaflet-control-zoom-in {
+  font-size: 22px;
+}
+.leaflet-touch .leaflet-control-zoom-out {
+  font-size: 24px;
+}
+
+/* general toolbar styles */
+.leaflet-bar {
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+  border-radius: 4px;
+}
+.leaflet-bar a, .leaflet-bar a:hover {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.leaflet-bar a, .leaflet-control-layers-toggle {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+}
+.leaflet-bar a:hover {
+  background-color: #f4f4f4;
+}
+.leaflet-bar a:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.leaflet-bar a:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: none;
+}
+.leaflet-bar a.leaflet-disabled {
+  cursor: default;
+  background-color: #f4f4f4;
+  color: #bbb;
+}
+.leaflet-touch .leaflet-bar a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.has-leaflet-pan-control .leaflet-control-zoom {
+  position: relative;
+  left:24px;
+}
+.has-leaflet-pan-control .leaflet-control-zoomslider {
+  position: relative;
+  left:22px;
+}
+
+.leaflet-control-pan  {
+  width: 76px; 
+  height: 76px;
+}
+
+.leaflet-control-pan > div {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.leaflet-control-pan > div {
+  box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+}
+.leaflet-control-pan a {
+    background-color: #fff;
+}
+.leaflet-control-pan a{
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    display: block;
+}
+.leaflet-control-pan a {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    width: 23px;
+    height: 23px;
+}
+.leaflet-control-pan a:hover {
+    background-color: #f4f4f4;
+}
+
+.leaflet-control-pan-up-wrap {
+  position:absolute;
+  left:26px;
+}
+.leaflet-control-pan-left-wrap {
+  position:absolute;
+  top:26px;
+}
+.leaflet-control-pan-right-wrap {
+  position:absolute;
+  left:52px;  
+  top:26px;
+}
+.leaflet-control-pan-down-wrap {
+  position:absolute;
+  left:26px;
+  top:52px;
+}
+
+.leaflet-control-pan-up {
+  background-image: url(images/pan-up.png);
+}
+.leaflet-control-pan-left {
+  background-image: url(images/pan-left.png);
+}
+.leaflet-control-pan-right {
+  background-image: url(images/pan-right.png);
+}
+.leaflet-control-pan-down {
+  background-image: url(images/pan-down.png);
+}
+
+.leaflet-touch .leaflet-control-pan div {
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  box-shadow: none;
+
+  border-radius: 10px;
+}
+
+.leaflet-touch .leaflet-control-pan {
+  width: 89px;
+  height: 119px;
+}
+
+.leaflet-touch .leaflet-control-pan a {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 7px;
+}
+
+.leaflet-touch .leaflet-control-pan-up-wrap {
+  left:26px;
+}
+
+.leaflet-touch .leaflet-control-pan-left-wrap {
+  top:40px;
+}
+
+.leaflet-touch .leaflet-control-pan-right-wrap {
+  left:52px;
+  top:40px;
+}
+
+.leaflet-touch .leaflet-control-pan-down-wrap {
+  left:26px;
+  top:80px;
+}
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-ms-touch-action: none;
+-ms-user-select: none;
+-moz-user-select: none;
+-moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+}
+.noUi-stacking .noUi-handle {
+/* This class is applied to the lower origin when
+   its values is > 50%. */
+  z-index: 10;
+}
+.noUi-stacking + .noUi-origin {
+/* Fix stacking order in IE7, which incorrectly
+   creates a new context for the origins. */
+  *z-index: -1;
+}
+.noUi-state-tap .noUi-origin {
+-webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s;
+}
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  height: 18px;
+}
+.noUi-horizontal .noUi-handle {
+  width: 34px;
+  height: 28px;
+  left: -17px;
+  top: -6px;
+}
+.noUi-horizontal.noUi-extended {
+  padding: 0 15px;
+}
+.noUi-horizontal.noUi-extended .noUi-origin  {
+  right: -15px;
+}
+.noUi-vertical {
+  width: 18px;
+}
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 34px;
+  left: -6px;
+  top: -17px;
+}
+.noUi-vertical.noUi-extended {
+  padding: 15px 0;
+}
+.noUi-vertical.noUi-extended .noUi-origin  {
+  bottom: -15px;
+}
+
+/* Styling;
+ */
+.noUi-background {
+  background: #FAFAFA;
+  box-shadow: inset 0 1px 1px #f0f0f0;
+}
+.noUi-connect {
+  background: #3FB8AF;
+  box-shadow: inset 0 0 3px rgba(51,51,51,0.45);
+-webkit-transition: background 450ms;
+  transition: background 450ms;
+}
+.noUi-origin {
+  border-radius: 2px;
+}
+.noUi-target {
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+}
+.noUi-target.noUi-connect {
+  box-shadow: inset 0 0 3px rgba(51,51,51,0.45), 0 3px 6px -5px #BBB;
+}
+
+/* Handles and cursors;
+ */
+.noUi-dragable {
+  cursor: w-resize;
+}
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize;
+}
+.noUi-handle {
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #FFF;
+  cursor: default;
+  box-shadow: inset 0 0 1px #FFF,
+        inset 0 1px 7px #EBEBEB,
+        0 3px 6px -3px #BBB;
+}
+.noUi-active {
+  box-shadow: inset 0 0 1px #FFF,
+        inset 0 1px 7px #DDD,
+        0 3px 6px -3px #BBB;
+}
+
+/* Handle stripes;
+ */
+.noUi-handle:before,
+.noUi-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: #E8E7E6;
+  left: 14px;
+  top: 6px;
+}
+.noUi-handle:after {
+  left: 17px;
+}
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
+}
+
+/* Disabled state;
+ */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+/* Blocked state;
+ */
+.noUi-state-blocked.noUi-connect,
+.noUi-state-blocked .noUi-connect {
+  background: #4FDACF;
+}

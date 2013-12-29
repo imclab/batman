@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <title>Batman Comics</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+   <div class="container">
+      <div class="page-header">
+        <h1>Batman Comics #1 - #713</h1>
+        <p class="lead">A tool for analyzing patterns of character appearances in the Batman comic book series.</p>
+      </div>
+      <div class="row" id="progressAnchor">
+        <div class="progress-container col-xs-8 col-md-offset-2 col-md-6 col-md-offset-3">
+          <p>Loading content...</p>
+          <div class="progress-bar progress-bar-info active">
+            <div class="loading-bar" style="width:100px;"></div>
+          </div>
+        </div>
+      </div>
+      <div id="controlrow" style="opacity:0;" class="row">
+        <div class="col-md-9 col-lg-9">
+          <h5>Select Character: <span class="cSliderLabel"></span></h5>
+          <div id="cSlider" class="noUiSlider"></div>
+          <h5>Browse Stories Featuring: <span class="cSliderLabel"></span></h5>
+          <div id="sSlider" class="noUiSlider"></div>
+        </div>
+      </div>
+      <div id="vizrow" style="opacity:0;" class="row">
+        <div class="col-md-9 col-lg-9">
+          <div class="leaflet-control-container">
+            <div class="leaflet-top leaflet-left has-leaflet-pan-control">
+              <div class="leaflet-control-pan leaflet-control">
+                <div class="leaflet-control-pan-up-wrap">
+                  <a id="panup" class="leaflet-control-pan-up" href="#" title="Up"></a>
+                </div>
+                <div class="leaflet-control-pan-left-wrap">
+                  <a id="panleft" class="leaflet-control-pan-left" href="#" title="Left"></a>
+                </div>
+                <div class="leaflet-control-pan-right-wrap">
+                  <a id="panright" class="leaflet-control-pan-right" href="#" title="Right"></a>
+                </div>
+                <div class="leaflet-control-pan-down-wrap">
+                  <a id="pandown" class="leaflet-control-pan-down" href="#" title="Down"></a>
+                </div>
+              </div>
+              <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                <a id="zoomin" class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a>
+                <a id="zoomout" class="leaflet-control-zoom-out" href="#" title="Zoom out">-</a>
+              </div>
+            </div>
+            <div class="leaflet-top leaflet-right"></div>
+            <div class="leaflet-bottom leaflet-left"></div>
+            <div class="leaflet-bottom leaflet-right"></div>
+          </div>
+          <svg version="1.1" id="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px" height="1000px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+            <g id="svg-container">
+              <text id="characterName" transform="matrix(1 0 0 1 673 45)"></text>
+              <circle fill="#cc4c02" cx="654" cy="39" r="8"/>
+              <text id="alsoText" transform="matrix(1 0 0 1 673 65)">Also Appears in Feature Story</text>
+              <rect fill="#f0cb26" x="650" y="54" height="12" width="8"/>
+              <path id="spiral" fill="none" stroke="#000000" stroke-miterlimit="10" d="M456.823,517.723c-10.75,0.06-19.497-8.39-19.555-18.893 c-0.059-10.503,8.593-19.051,19.343-19.111l0-0.067c21.5-0.12,38.993,16.781,39.11,37.787c0.117,21.006-17.186,38.101-38.686,38.221 l0,0.067c-32.251,0.18-58.49-25.171-58.666-56.68c-0.176-31.509,25.778-57.152,58.029-57.332l0-0.067 c43.001-0.24,77.986,33.561,78.221,75.573c0.235,42.012-34.371,76.202-77.372,76.443l0,0.067 c-53.751,0.3-97.483-41.951-97.776-94.467s42.964-95.253,96.715-95.553l0-0.067c64.501-0.36,116.979,50.342,117.331,113.36 c0.352,63.018-51.557,114.303-116.058,114.664l0,0.067c-75.251,0.42-136.476-58.732-136.887-132.253 c-0.411-73.521,60.149-133.354,135.401-133.774l0-0.067c86.001-0.48,155.972,67.122,156.442,151.147 c0.469,84.024-68.742,152.405-154.744,152.885l0,0.067c-96.752,0.54-175.469-75.513-175.997-170.04 c-0.528-94.527,77.335-171.455,174.086-171.996l0-0.067c107.502-0.601,194.966,83.903,195.552,188.933 C651.9,621.6,565.386,707.075,457.884,707.675l0,0.067c-118.252,0.661-214.462-92.293-215.108-207.827 c-0.645-115.534,94.52-209.556,212.772-210.217l0-0.067c129.002-0.721,233.959,100.683,234.663,226.72 S587.099,744.959,458.096,745.679l0,0.067c-139.752,0.781-253.455-109.074-254.218-245.613 c-0.763-136.54,111.706-247.657,251.458-248.438l0-0.067c150.503-0.841,272.952,117.464,273.773,264.507 c0.821,147.043-120.299,266.708-270.801,267.549l0,0.067c-161.253,0.901-292.448-125.854-293.328-283.4 c-0.88-157.546,128.891-285.759,290.144-286.659l0-0.067c172.003-0.961,311.945,134.245,312.884,302.293 c0.939,168.049-137.484,304.809-309.487,305.77l0,0.067c-182.753,1.021-331.442-142.635-332.439-321.187 s146.077-323.86,328.83-324.881l0-0.067c193.503-1.081,350.938,151.025,351.994,340.08s-154.67,342.91-348.173,343.991l0,0.067 C254.48,860.899,88.299,700.343,87.184,500.785C86.069,301.227,250.447,138.824,454.7,137.683l0-0.067 c215.004-1.201,389.931,167.806,391.105,377.867S673.949,896.494,458.946,897.695l0,0.067 c-225.754,1.261-409.428-176.196-410.66-396.76S228.734,100.94,454.488,99.679"/>
+              <path id="cline" fill="none" stroke="#000000" stroke-miterlimit="10" d="M480.301,99.614c110.307,5.482,218.168,54.834,295.226,145.721 c147.818,174.347,126.312,435.514-48.035,583.332s-435.514,126.312-583.332-48.035S17.847,345.118,192.194,197.3 C275.654,126.539,379.008,94.58,480.301,99.614"/>
+              <text transform="matrix(0.4532 -0.8922 0.8916 0.4528 69.7712 312.2036)">1</text>
+              <text transform="matrix(0.4742 -0.8813 0.8806 0.4738 74.3985 303.093)">9</text>
+              <text transform="matrix(0.4948 -0.8698 0.8692 0.4945 79.2338 294.1028)">4</text>
+              <text transform="matrix(0.5153 -0.8579 0.8572 0.5149 84.2958 285.2024)">0</text>
+              <text transform="matrix(0.5331 -0.8469 0.8463 0.5327 89.5722 276.4415)">s</text>
+              <text transform="matrix(0.5828 -0.8135 0.8129 0.5824 103.165 255.7269)">1</text>
+              <text transform="matrix(0.6018 -0.7996 0.799 0.6013 109.1109 247.4269)">9</text>
+              <text transform="matrix(0.6204 -0.7852 0.7846 0.6199 115.2477 239.2707)">5</text>
+              <text transform="matrix(0.6387 -0.7704 0.7698 0.6382 121.5859 231.2471)">0</text>
+              <text transform="matrix(0.6546 -0.7569 0.7564 0.6541 128.1197 223.3836)">s</text>
+              <text transform="matrix(0.6986 -0.7165 0.716 0.6981 144.6775 204.9529)">1</text>
+              <text transform="matrix(0.7152 -0.6999 0.6994 0.7147 151.802 197.6432)">9</text>
+              <text transform="matrix(0.7315 -0.6829 0.6824 0.731 159.1135 190.4874)">6</text>
+              <text transform="matrix(0.7474 -0.6655 0.665 0.7468 166.5795 183.5149)">0</text>
+              <text transform="matrix(0.7611 -0.6497 0.6493 0.7606 174.2333 176.7158)">s</text>
+              <text transform="matrix(0.7986 -0.603 0.6026 0.798 193.3727 160.9936)">1</text>
+              <text transform="matrix(0.8126 -0.584 0.5836 0.812 201.5176 154.8415)">9</text>
+              <text transform="matrix(0.8262 -0.5647 0.5642 0.8256 209.815 148.8787)">7</text>
+              <text transform="matrix(0.8394 -0.5449 0.5445 0.8387 218.2613 143.1033)">0</text>
+              <text transform="matrix(0.8506 -0.5272 0.5268 0.85 226.8509 137.5413)">s</text>
+              <text transform="matrix(0.8808 -0.475 0.4747 0.8802 248.1425 124.8984)">1</text>
+              <text transform="matrix(0.8918 -0.454 0.4536 0.8912 257.1362 120.0483)">9</text>
+              <text transform="matrix(0.9024 -0.4327 0.4323 0.9017 266.2238 115.4205)">8</text>
+              <text transform="matrix(0.9124 -0.4111 0.4108 0.9117 275.4376 111.0012)">0</text>
+              <text transform="matrix(0.9209 -0.3917 0.3914 0.9202 284.7782 106.807)">s</text>
+              <text transform="matrix(0.9429 -0.3353 0.3351 0.9422 307.7469 97.5502)">1</text>
+              <text transform="matrix(0.9506 -0.3128 0.3126 0.9499 317.3676 94.1274)">9</text>
+              <text transform="matrix(0.9578 -0.29 0.2898 0.9571 327.0977 90.9249)">9</text>
+              <text transform="matrix(0.9644 -0.2672 0.267 0.9637 336.8521 87.9684)">0</text>
+              <text transform="matrix(0.9698 -0.2468 0.2467 0.9691 346.7261 85.2463)">s</text>
+              <text transform="matrix(0.9829 -0.1881 0.188 0.9822 370.8378 79.5953)">2</text>
+              <text transform="matrix(0.9871 -0.1649 0.1648 0.9863 380.8733 77.6724)">0</text>
+              <text transform="matrix(0.9907 -0.1416 0.1415 0.9899 390.9537 75.9884)">0</text>
+              <text transform="matrix(0.9937 -0.1184 0.1183 0.993 401.0751 74.5407)">0</text>
+              <text transform="matrix(0.9959 -0.0978 0.0977 0.9952 411.2385 73.3408)">s</text>
+              <path id="gline" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45.65,309.746c68.77-143.693,210.838-247.233,381.108-258.891"/>
+              <path id="char-time" fill="none" stroke="#000000" stroke-miterlimit="10" d="M38.151,306.138C107.536,159.089,252.348,52.95,426.087,41.054"/>
+            </g>
+          </svg>
+        </div>
+        <div id="character-info" class="col-md-3 col-lg-3"></div>
+        <div class="col-md-10 col-lg-10"></div>
+      </div>
+    </div>
+
+    <script id="story-template" type="text/x-handlebars-template">
+      <div class="row">
+        <div id="spacer" class="hidden-xs hidden-sm col-md-12 col-lg-12"></div>
+        <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
+          <h6>Story Title:</h6>
+          <h4>{{name}}</h4>
+          <h6>Issue:</h6>
+          <h4>Batman #{{nmbr}}</h4>
+          <h5>{{publ}}</h5>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
+          <dl>
+            <dt>Pencils:</dt>
+            {{#each pncl}}
+              <dd>&bull; {{this}}</dd>
+            {{/each}}
+            <br/>
+            <dt>Inks:</dt>
+            {{#each inks}}
+              <dd>&bull; {{this}}</dd>
+            {{/each}}
+            <br/>
+            <dt>Colors:</dt>
+            {{#each clrs}}
+              <dd>&bull; {{this}}</dd>
+            {{/each}}
+          </dl>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
+          <dl>
+            <dt>Characters:</dt>
+            <ul class="list-inline">
+              {{#each chrs}}
+                <li class="char-list-item">{{this}}</li>
+              {{/each}}
+            </ul>
+          </dl>
+        </div>
+      </div>
+    </script>
+
+    <script src="lib/jquery.js"></script>
+    <script src="lib/jquery.nouislider.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/handlebars.js"></script>
+    <script src="lib/queue.js"></script>
+    <script src="lib/d3.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/drawNode.js"></script>
+    <script src="js/lights.js"></script>
+    <script src="js/bars.js"></script>
+    <script src="js/characterTime.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
