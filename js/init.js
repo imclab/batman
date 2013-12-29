@@ -34,7 +34,6 @@ var _d_ = {
     _d_.onStory(data);
   },
   onSlide: function () {
-    console.log("slide")
     var slider = this.context.id, value = Math.floor(this.val());
     if (slider === 'cSlider') {
       var data = _d_.charArray[value];
@@ -57,7 +56,6 @@ var _d_ = {
     }
     if (slider === 'sSlider') {
       var data = _d_.charStoryArray[value];
-      console.log("change", this.val(), data)
       _d_.onStory(data);
     }
   },
